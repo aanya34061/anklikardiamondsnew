@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import Navbar from './Components/common/Navbar/navbar';
+import Footer from './Components/common/Footer/footer';
+import ScrollToTop from './Scrolltotop/scrolltotop';
 import './App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AppRoutes from './Routes/routes';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      delay: 50,
+      easing: "ease-in-out",
+      offset: 120,
+      once: false, // animation repeats while scrolling
+    });
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <AppRoutes />
+      <Footer />
+      <ScrollToTop />
+    </BrowserRouter>
   );
 }
 

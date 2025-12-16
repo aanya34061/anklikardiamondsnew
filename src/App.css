@@ -1,38 +1,684 @@
-.App {
-  text-align: center;
+/* ================================
+   Global Color Variables (Luxury Gold Theme)
+   ================================ */
+:root {
+  /* Primary Brand Colors (Gold-based) */
+  --color-primary: #D4AF37;  /* Classic Gold */
+  --color-secondary: #B8860B; /* Deep Gold */
+
+  /* Neutrals / Backgrounds */
+  --color-bg-light: #F8F1E4;  /* Light warm cream */
+  --color-bg-cream: #FFF8EA;  /* Soft elegant cream */
+  --color-bg-soft: #FAEEDB;   /* Slightly richer cream */
+
+  /* Text Colors */
+  --color-text-dark: #1A1A1A;      /* Almost black (luxury) */
+  --color-text-medium: #4A4A4A;    /* Muted dark grey */
+  --color-text-light: #FFFFFF;
+
+  /* Borders / Subtle Lines */
+  --color-border: #D4AF3770;  /* Gold with transparency */
+}
+.text-gold-primary {
+  color: var(--color-primary) !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-gold-secondary {
+  color: var(--color-secondary) !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.border-gold {
+  border-color: var(--color-border) !important;
+}
+.text-white {
+  color: var(--color-text-light) !important;
+}
+
+/* Global body styling */
+body {
+  background-color: var(--color-bg-cream);
+  color: var(--color-text-dark);
+  font-family: 'Inter', sans-serif;
+}
+.text-justify {
+  text-align: justify;
+}
+
+/* ================================
+   Navbar Styling (Jewellery Luxury Theme – DARK)
+   ================================ */
+
+.jewel-navbar {
+  background-color: #1A1A1A !important; /* Rich luxury black */
+  border-bottom: 1px solid var(--color-border);
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.jewel-logo {
+  height: 65px;  /* Slightly bigger for visibility */
+  width: auto;
+}
+
+.jewel-link {
+  color: var(--color-primary) !important; /* Gold text */
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.jewel-link:hover {
+  color: var(--color-secondary) !important; /* Deep gold hover */
+}
+body {
+  padding-top: 90px; /* Adjust according to navbar height */
+}
+
+
+/* ✨ Glass Effect on Scroll */
+.nav-glass {
+  background: rgba(26, 26, 26, 0.65) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* Toggler for mobile */
+.navbar-toggler {
+  border-color: var(--color-primary) !important; /* Gold border */
+}
+
+.navbar-toggler-icon {
+  filter: invert(85%) sepia(60%) saturate(600%) hue-rotate(10deg);
+}
+@media (max-width: 576px) {
+  .jewel-logo {
+    height: 50px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Ensures slider appears right under navbar */
+.jewel-slider-wrapper {
+  margin-top: 60px; /* equal to navbar height */
+}
+
+/* Slider container */
+.jewel-slider {
+  width: 100%;
+  height: calc(100vh - 80px); /* Full screen minus navbar height */
+  overflow: hidden;
+}
+
+/* Video */
+.slider-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Perfect crop for all screens */
+}
+.anklikar-title {
+  color: var(--color-primary);
+  letter-spacing: 1px;
+}
+
+.anklikar-subtitle {
+  color: var(--color-secondary);
+  letter-spacing: 1px;
+}
+.jewel-video-fixed {
+  width: 500px;         /* change if you want bigger/smaller */
+  height: 650px;
+  margin: 0 auto;       /* centers the video always */
+  border-radius: 10%; /* rounded corners for elegance */
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jewel-video-fixed video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* MODERN COLLAGE GRID */
+.category-collage {
+  margin-top: 20px;
+}
+
+.collage-item {
+  position: relative;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.collage-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* MODERN LABEL */
+.collage-label {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  padding: 3px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+
+/* HOVER EFFECT */
+.collage-item:hover .collage-img {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+/* PREMIUM LUXURY STRIP SECTION */
+.luxury-strip-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.luxury-strip {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-dark);
+  letter-spacing: 0.3px;
+  text-transform: capitalize;
+  transition: 0.3s ease;
+  cursor: default;
+}
+
+/* Subtle Hover Glow */
+.luxury-strip:hover {
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* Gold Stars / Icon */
+.luxury-icon {
+  color: var(--color-primary);
+  padding: 0 5px;
+  font-size: 0.95rem;
+}
+/* ======== Diamond Timeline ======== */
+.diamond-timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 15px;
+}
+
+.diamond-timeline::-webkit-scrollbar {
+  display: none;
+}
+
+.diamond-step {
+  text-align: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.diamond-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  background: #fff;
+}
+
+.diamond-text {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.diamond-curve {
+  width: 70px;
+  height: 30px;
+  border-bottom: 2px solid var(--color-primary);
+  border-radius: 0 0 40px 40px;
+  position: absolute;
+  top: 28px;
+  right: -70px;
+}
+
+/* ======== WhatsApp Banner CTA ======== */
+.whatsapp-banner {
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 900px;
+  background: #0D9600;
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.whatsapp-left h5,
+.whatsapp-left p {
+  margin: 0;
+}
+
+.whatsapp-btn {
+  background: #fff;
+  color: #0D9600;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+  background: var(--color-primary);
+  color: #000;
+}
+/* .lux-footer {
+  background:#111;
+  color:#ddd;
+}
+.lux-link {
+  text-decoration:none;
+  color:#ddd;
+}
+.lux-link:hover {
+  color:var(--color-primary);
+}
+.lux-footer p, .lux-footer li {
+  color:#bbb;
+} */
+/* ======== Quality Assurance Section ======== */
+.quality-grid {
+  text-align: center;
+  row-gap: 40px;
+}
+
+.quality-card {
+  padding: 15px;
+}
+
+.quality-icon {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  margin: 0 auto;
+  background: #fff;
+  transition: 0.3s ease;
+}
+
+.quality-card:hover .quality-icon {
+  background: var(--color-primary);
+  color: #000;
+}
+/* WHY US MODERN SECTION */
+.why-us-section p {
+  line-height: 1.6;
+}
+
+.why-us-img-box {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.why-us-img-box img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.why-us-img-box img:hover {
+  transform: scale(1.03);
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .why-us-img-box img {
+    height: 260px;
+  }
+}
+/* ABOUT Page */
+.about-card {
+  text-align: center;
+  border: 1px solid var(--color-border);
+  padding: 20px 0;
+}
+
+.about-img-box img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Mobile Fix */
+@media (max-width: 576px) {
+  .about-img-box img {
+    height: 130px;
+  }
+}
+
+/* mobile fixes */
+/* ✅ GLOBAL RESPONSIVE FIX */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* 🛑 Stop Content Jump While Scrolling */
+body {
+  padding-top: 85px; 
+}
+
+/* 📌 Fix Navbar Height On All Devices */
+.jewel-navbar {
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+}
+
+/* 📌 Glass Navbar Fix (no shifting) */
+.nav-glass {
+  background: rgba(26, 26, 26, 0.70) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* 📌 Fix Slider & Hero Container Spacing */
+.home-slider,
+.jewel-slider-wrapper,
+.jewel-slider {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 🎥 Fix Video Box Responsiveness */
+.jewel-video-fixed {
+  width: 100%;
+  max-width: 480px;
+  height: 600px;
+}
+
+@media (max-width: 992px) {
+  .jewel-video-fixed {
+    height: 480px;
+  }
+}
+
+@media (max-width: 576px) {
+  .jewel-video-fixed {
+    height: 320px;
+  }
+}
+
+/* 🖼 Fix Category Collage Sizes */
+.collage-img {
+  height: 200px;
+}
+
+@media (max-width: 576px) {
+  .collage-img {
+    height: 150px;
+  }
+}
+
+/* 💎 Fix Why-Us Image */
+.why-us-img-box img {
+  height: 420px;
+}
+
+@media (max-width: 768px) {
+  .why-us-img-box img {
+    height: 260px;
+  }
+}
+
+/* 💍 Quality Icon Fix on Small Screens */
+.quality-icon {
+  transform: scale(1);
+}
+
+@media (max-width: 576px) {
+  .quality-icon {
+    transform: scale(0.9);
+  }
+}
+.store-map {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  height: 480px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.store-map-iframe { width: 100%; height: 100%; border: 0; }
+
+.store-card {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.75);
+  color: #fff; text-align: center;
+  padding: 15px 20px; border-radius: 10px;
+  width: 300px;
+}
+
+.dir-btn {
+  display: inline-block;
+  background: var(--color-primary);
+  padding: 5px 12px; border-radius: 5px;
+  font-size: 0.85rem; color: #000; font-weight: 600;
+}
+.dir-btn:hover { background: var(--color-secondary); color: #fff; }
+
+/* About us */
+.about-hero { padding: 60px 0 20px; }
+.about-img-hero img,
+.about-feature-img img { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; }
+
+.about-card { padding: 25px 10px; border: 1px solid var(--color-border); }
+.about-icon { font-size: 1.6rem; color: var(--color-primary); margin-top: 10px; }
+
+.promise-box { text-align: center; max-width: 700px; margin: auto; }
+
+@media(max-width:768px){
+  .about-img-hero img { height: 250px; }
+  .about-feature-img img { height: 200px; }
+}
+
+/* Split Luxury Section */
+.why-split-section {
+  background: var(--color-bg-cream);
+}
+
+.lux-line {
+  font-weight: 700;
+  color: var(--color-secondary);
+  border-left: 4px solid var(--color-primary);
+  padding-left: 12px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.why-line-group {
+  margin-bottom: 35px;
+}
+.why-split-section .col-lg-4 {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  .why-split-section .col-lg-4 {
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+}
+.lux-footer {
+  background:#111;
+  color:#ddd;
+}
+
+.lux-footer .lux-link {
+  text-decoration:none;
+  color:#ddd;
+}
+
+.lux-footer .lux-link:hover {
+  color:var(--color-primary);
+}
+
+.social-icon {
+  font-size:1.2rem;
+  color:#ddd;
+  transition:0.3s;
+}
+
+.social-icon:hover {
+  color:var(--color-primary);
+}
+
+.footer-links li {
+  margin-bottom:8px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.footer-logo {
+  width: 90px;
+  height: auto;
+}
+.store-map {
+  height: 380px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.social-icon {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+}
+.social-icon:hover {
+  color: var(--color-secondary);
+}
+/* ================= Contact Banner ================= */
+
+.contact-banner {
+  width: 100%;
+  height: 65vh;         /* premium responsive height */
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.contact-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* perfect fitting */
+  display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+  .contact-banner {
+    height: 40vh;       /* smaller on mobile */
+  }
+}
+.video-wrap {
+  width: 100%;
+  height: 500px;            /* bigger premium height */
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.video-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;   /* FULL FIT ALWAYS */
+  display: block;
+}
+
+/* Mobile fix */
+@media (max-width: 576px) {
+  .video-wrap {
+    height: 340px;
+  }
+}
+.collection-video-box {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
+
+.collection-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ===============================
+   ✅ GLOBAL BANNER FIX (ONLY)
+   =============================== */
+
+/* All top banners */
+.about-banner,
+.contact-banner,
+.collection-banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Banner images */
+.about-banner img,
+.contact-banner img,
+.collection-banner img {
+  width: 100%;
+  height: auto;
+  max-height: 65vh;
+  object-fit: contain;   /* ❗ image cut nahi hogi */
+  display: block;
+  background: #000;      /* empty sides black / premium look */
+}
+
+/* Mobile adjustment */
+@media (max-width: 576px) {
+  .about-banner img,
+  .contact-banner img,
+  .collection-banner img {
+    max-height: 40vh;
   }
 }
