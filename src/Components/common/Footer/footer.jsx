@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaInstagram, FaWhatsapp, FaFacebook, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/newlogo.png";
 
 const Footer = () => {
   return (

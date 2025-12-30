@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/newlogo.png";
 
 const JewelryNavbar = () => {
   const [scrolling, setScrolling] = useState(false);
